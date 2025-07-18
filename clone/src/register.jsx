@@ -13,12 +13,12 @@ function Register() {
   return (
     <div className="container">
       <form className="form" onSubmit={handleRegister}>
-        <h2>Register</h2>
+        <h2 style={{color : 'white'}}>Register</h2>
         <input type="text" placeholder="Username" required />
         <input type="email" placeholder="Email" required />
         <input type="password" placeholder="Password" required />
         <button type="submit">Register</button>
-        <p>Already have an account? <Link to="/">Login</Link></p>
+        <p style={{color : 'white'}}>Already have an account? <Link to="/">Login</Link></p>
       </form>
     </div>
   );

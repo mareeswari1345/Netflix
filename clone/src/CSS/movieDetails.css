@@ -1,0 +1,246 @@
+/* MovieDetails.css */
+.movie-details-container {
+  color: white;
+  background-color: #141414;
+}
+
+.movie-hero {
+  position: relative;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, #141414, transparent);
+  padding: 5rem;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.movie-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.movie-meta {
+  margin-bottom: 1rem;
+}
+
+.movie-meta span {
+  margin-right: 1rem;
+}
+
+.play-button {
+  background-color: white;
+  color: black;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.secondary-button {
+  background-color: rgba(109, 109, 110, 0.7);
+  color: white;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.trailer-section {
+  padding: 2rem 5rem;
+}
+
+.details-section {
+  padding: 2rem 5rem;
+}
+
+.similar-movies {
+  padding: 2rem 5rem;
+}
+
+.movie-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.movie-card {
+  min-width: 200px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 4px;
+}
+/* Cast Section Styling */
+.cast-section {
+  padding: 20px 50px;
+  color: white;
+}
+
+.cast-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.cast-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 10px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.cast-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.cast-member {
+  min-width: 120px;
+  text-align: center;
+}
+
+.cast-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.cast-member:hover img {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cast-member p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cast-member .character {
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cast-section {
+    padding: 20px 30px;
+  }
+  
+  .cast-member {
+    min-width: 100px;
+  }
+  
+  .cast-member img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cast-section {
+    padding: 20px 15px;
+  }
+  
+  .cast-member {
+    min-width: 80px;
+  }
+  
+  .cast-member img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .cast-member p {
+    font-size: 0.8rem;
+  }
+  
+  .cast-member .character {
+    font-size: 0.7rem;
+  }
+}
+/* Director Section Styling */
+.director-section {
+  padding: 0 50px 30px;
+  color: white;
+  margin-top: 20px;
+}
+
+.director-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.director-section p {
+  display: inline-block;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 8px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  border-left: 3px solid #e50914;
+  transition: all 0.3s ease;
+}
+
+.director-section p:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .director-section {
+    padding: 0 30px 25px;
+  }
+  
+  .director-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .director-section p {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .director-section {
+    padding: 0 20px 20px;
+  }
+  
+  .director-section h2 {
+    font-size: 1.2rem;
+  }
+  
+  .director-section p {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+}

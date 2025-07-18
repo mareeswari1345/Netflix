@@ -1,78 +1,53 @@
-// src/Home.js
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Home.css';
+import { movies } from './Data';
+import MovieCard from './components/moviecard';
+import NavBar from './components/navbar.jsx';
+import './CSS/home.css'
+const HomePage = () => {
+  return (
+    <>
+    <NavBar/>
+      <div className="home-page">
+        <div className="hero-section">
+          <div className="hero-content">
+            <h1 className="hero-title">Movies in Tamil</h1>
+            <p className="hero-subtitle">Experience blockbusters in your native language</p>
+          </div>
+        </div>
 
-import officerImg from './assets/officer.jpeg';
-import courtImg from './assets/court.jpg';
-import netflixImg from './assets/netflix.jpeg';
-import dramaImg from './assets/drama.jpeg';
-import actionImg from './assets/action.jpeg';
-import seriesImg from './assets/series.jpeg';
+        <div className="content-wrapper">
+          <div className="section-header">
+            <h2 className="section-title">Popular on TamilFlix</h2>
+            <div className="view-all">View All</div>
+          </div>
+          
+          <div className="movies-grid">
+            {movies.map(movie => {
+              if(movie.id<7)
+              {
+                return <MovieCard key={movie.id} movie={movie} />
+              }
+             
+            })}
+          </div>
 
-const movies = [
-{ id: 1, title: 'Officer', image: officerImg },
-{ id: 2, title: 'Court', image: courtImg },
-{ id: 3, title: 'Netflix', image: netflixImg },
-{ id: 4, title: 'Drama', image: dramaImg },
-{ id: 5, title: 'Action', image: actionImg },
-{ id: 6, title: 'Series', image: seriesImg },
-];
-
-function Home() {
-const navigate = useNavigate();
-
-const handleLogout = () => {
-alert('You have been logged out!');
-navigate('/login');
+          <div className="section-header">
+            <h2 className="section-title">New Releases</h2>
+            <div className="view-all">View All</div>
+          </div>
+          
+          <div className="movies-grid">
+            {movies.slice().reverse().map(movie => {
+              if(movie.id>5 || movie.id==1)
+              {
+                return <MovieCard key={movie.id} movie={movie} />
+              }
+              
+})}
+          </div>
+        </div>
+      </div>
+   </>
+  );
 };
 
-return (
-<div className="home-container">
-{/* Navbar */}
-<div className="navbar">
-<img  
-src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"  
-alt="Netflix Logo"  
-className="netflix-logo"  
-/>
-<div className="nav-right">
-<span className="profile-name">Hi, User</span>
-<button className="logout-button" onClick={handleLogout}>Logout</button>
-</div>
-</div>
-
-{/* Hero */}  
-  <div className="hero-section">  
-    <div className="hero-overlay" />  
-    <div className="hero-content">  
-      <h1 className="hero-title">DETECTIVE<br />UJJWALAN</h1>  
-      <p className="hero-sub">#7 in Movies Today 👍 We think you’ll love this!</p>  
-      <div className="hero-buttons">  
-        <button className="play-btn">▶ Play</button>  
-        <button className="info-btn">ℹ More Info</button>  
-      </div>  
-    </div>  
-  </div>  
-
-  {/* Movies */}  
-  <div className="movie-row">  
-    <h2>Movies & TV Shows Dubbed in Tamil</h2>  
-    <div className="movie-thumbnails">  
-      {movies.map((movie) => (  
-        <div key={movie.id} className="movie-thumb">  
-          <img src={movie.image} alt={movie.title} />  
-          <p>{movie.title}</p>  
-        </div>  
-      ))}  
-    </div>  
-  </div>  
-</div>
-
-);
-}
-
-export default Home;
-
-
- 
+export default HomePage;

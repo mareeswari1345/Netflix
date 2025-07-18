@@ -1,0 +1,107 @@
+/* MovieCard.css */
+.movie-card {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  margin-right: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.movie-card:hover img {
+  transform: scale(1.05);
+}
+
+.movie-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .movie-info {
+  opacity: 1;
+}
+
+.movie-info h3 {
+  margin: 0;
+  font-size: 16px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* For the movie rows container */
+.movies-row {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.movies-row::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.movie-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.movie-card:hover::after {
+  background: rgba(0, 0, 0, 0);
+}
+.movie-card::before {
+  content: '▶';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 40px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.movie-card:hover::before {
+  opacity: 0.8;
+}
+@media (max-width: 768px) {
+  .movie-card {
+    width: 150px;
+    height: 225px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-card {
+    width: 120px;
+    height: 180px;
+  }
+}
