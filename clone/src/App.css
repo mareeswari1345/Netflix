@@ -1,0 +1,88 @@
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+}
+
+/* Full screen black background */
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  background-color: #222;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #000;
+  width: 300px;
+  text-align: center;
+}
+
+.form h2 {
+  margin-bottom: 20px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
+}
+
+.form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form p {
+  margin-top: 15px;
+}
+
+.form a {
+  color: #e50914;
+  text-decoration: none;
+}
+
+.home {
+  min-height: 100vh;
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.home h1 {
+  margin-bottom: 30px;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.movie {
+  background-color: #333;
+  padding: 40px;
+  border-radius: 8px;
+  width: 120px;
+  text-align: center;
+}
