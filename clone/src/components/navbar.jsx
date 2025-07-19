@@ -10,6 +10,7 @@ const Navbar = () => {
   
   const handleLogout = () => {
     console.log('User logged out');
+    console.log('')
     navigate('/');
   };
 
